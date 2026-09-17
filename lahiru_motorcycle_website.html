@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lahiru Motorcycle | Kamburupitiya</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#111;color:#fff}
+header{background:#080808;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:900;color:#ffd400}.logo span{color:#e60000}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:700}
+.hero{padding:85px 6%;background:linear-gradient(110deg,#090909 45%,#270000);min-height:560px;display:flex;align-items:center}
+.hero h1{font-size:52px;margin:0 0 15px}.hero h1 span{color:#e60000}.hero p{font-size:19px;max-width:650px;color:#ddd;line-height:1.6}
+.btn{display:inline-block;padding:15px 24px;margin:10px 10px 0 0;border-radius:7px;text-decoration:none;font-weight:800}
+.red{background:#e60000;color:white}.yellow{background:#ffd400;color:#111}
+section{padding:55px 6%}.title{text-align:center;font-size:32px;margin-bottom:30px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:#1b1b1b;border:1px solid #333;border-radius:12px;padding:25px}.card h3{color:#ffd400}
+.booking{background:#181818}.form{max-width:750px;margin:auto;background:#0d0d0d;padding:25px;border-radius:14px}
+input,select,textarea{width:100%;padding:14px;margin:7px 0 14px;border-radius:6px;border:1px solid #444;background:#222;color:#fff}
+button{border:0;cursor:pointer;width:100%;font-size:17px}
+footer{padding:30px 6%;background:#050505;text-align:center;color:#aaa}
+@media(max-width:700px){nav{display:none}.hero h1{font-size:38px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">LAHIRU <span>MOTORCYCLE</span></div>
+<nav><a href="#services">Services</a><a href="#booking">Book Service</a><a href="#contact">Contact</a></nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>LAHIRU <span>MOTORCYCLE</span></h1>
+<p>Motorcycle Spare Parts, Modifications, Accessories & All Motorcycle Repairs.</p>
+<p><b>Honda | Yamaha | Suzuki | Bajaj | Hero | TVS | All Motorcycles</b></p>
+<a class="btn red" href="#booking">BOOK A SERVICE</a>
+<a class="btn yellow" href="https://wa.me/94714685868">WHATSAPP US</a>
+</div>
+</section>
+
+<section id="services">
+<h2 class="title">Our Services</h2>
+<div class="cards">
+<div class="card"><h3>🔧 Full Service</h3><p>Complete motorcycle inspection and servicing.</p></div>
+<div class="card"><h3>🛢️ Oil Change</h3><p>Engine oil replacement and routine checks.</p></div>
+<div class="card"><h3>⚙️ Engine Tune Up</h3><p>Professional engine tuning and adjustments.</p></div>
+<div class="card"><h3>🏍️ Modifications</h3><p>Motorcycle modifications and accessories.</p></div>
+</div>
+</section>
+
+<section class="booking" id="booking">
+<h2 class="title">Book a Service</h2>
+<form class="form" onsubmit="book(event)">
+<label>Name</label><input id="name" required>
+<label>Phone / WhatsApp</label><input id="phone" required>
+<label>Bike Brand</label>
+<select id="brand"><option>Honda</option><option>Yamaha</option><option>Suzuki</option><option>Bajaj</option><option>Hero</option><option>TVS</option><option>Other</option></select>
+<label>Bike Model</label><input id="model" placeholder="e.g. Dio / FZ / CT100">
+<label>Service Type</label>
+<select id="service"><option>Full Service</option><option>Oil Change</option><option>Engine Tune Up</option><option>Repair</option><option>Electrical</option><option>Modification</option></select>
+<label>Preferred Date</label><input id="date" type="date" required>
+<label>Preferred Time</label><input id="time" type="time" required>
+<label>Additional Message</label><textarea id="msg" rows="4"></textarea>
+<button class="btn red" type="submit">SEND BOOKING VIA WHATSAPP</button>
+</form>
+</section>
+
+<section id="contact">
+<h2 class="title">Contact Us</h2>
+<div class="cards">
+<div class="card"><h3>📞 071 468 5868</h3><p>Call / WhatsApp</p></div>
+<div class="card"><h3>📍 Kamburupitiya</h3><p>Hakmana Road, In Front of Pradeshiya Sabawa</p></div>
+<div class="card"><h3>⭐ Quality Service</h3><p>Quality Spare Parts • Professional Service • Genuine Parts Available</p></div>
+</div>
+</section>
+
+<footer>© 2026 Lahiru Motorcycle • Hakmana Road, Kamburupitiya</footer>
+
+<script>
+function book(e){
+ e.preventDefault();
+ const n=document.getElementById('name').value, p=document.getElementById('phone').value;
+ const b=document.getElementById('brand').value, m=document.getElementById('model').value;
+ const s=document.getElementById('service').value, d=document.getElementById('date').value;
+ const t=document.getElementById('time').value, x=document.getElementById('msg').value;
+ const text=`*LAHIRU MOTORCYCLE - SERVICE BOOKING*%0A%0AName: ${n}%0APhone: ${p}%0ABike: ${b} ${m}%0AService: ${s}%0ADate: ${d}%0ATime: ${t}%0AMessage: ${x}`;
+ window.open(`https://wa.me/94714685868?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
